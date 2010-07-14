@@ -57,8 +57,8 @@ class InlineStylesMailer extends Mailer{
 		
 	    //this is the best place for Emogrification
 	    
-	    //TODO: grab css from content <style></style> & possibly Requirements::backend()->get_css();
-	    $e = new CSSToInlineStyles($htmlContent);
+	    //TODO: grab css from files at Requirements::backend()->get_css();
+	    $e = new CSSToInlineStyles(utf8_decode($htmlContent));
 	    $e->setUseInlineStylesBlock();
 	    $htmlContent = $e->convert();
 	    
