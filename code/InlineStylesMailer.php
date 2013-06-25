@@ -11,7 +11,9 @@ class InlineStylesMailer extends Mailer
 
 		require_once(ISEMAIL_PATH.'/thirdparty/CssToInlineStyles/CssToInlineStyles.php');
 		
-		$cssToInlineStyles = new CssToInlineStyles($htmlContent,implode("\n\n",$this->getCSS($htmlContent)));
+		$cssToInlineStyles = new TijsVerkoyen\CssToInlineStyles\CssToInlineStyles(
+                $htmlContent, implode("\n\n",$this->getCSS($htmlContent))
+            );
 		$htmlContent = $cssToInlineStyles->convert();
 
 		return parent::sendHTML($to, $from, $subject, $htmlContent, $attachedFiles, $customheaders, $plainContent);
