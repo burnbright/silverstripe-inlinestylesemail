@@ -5,11 +5,10 @@
 */
 class InlineStyler{
 	
-	static function convert(htmlContent)
-	{
+	static function convert($htmlContent){
 		require_once(ISEMAIL_PATH.'/thirdparty/CssToInlineStyles/CssToInlineStyles.php');
 		$cssToInlineStyles = new TijsVerkoyen\CssToInlineStyles\CssToInlineStyles(
-                $htmlContent, implode("\n\n",$this->getCSS($htmlContent))
+                $htmlContent, implode("\n\n", self::getCSS($htmlContent))
             );
 		return $cssToInlineStyles->convert();
 	}
@@ -56,7 +55,7 @@ class InlineStyler{
         if($node->hasChildNodes()) {
             foreach($node->childNodes as $child) {
                 $stylesheets = array_merge($stylesheets,
-                    $this->extractStylesheets($child, $base));
+                    self::extractStylesheets($child, $base));
             }
         }
         return $stylesheets;
