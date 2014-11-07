@@ -1,0 +1,19 @@
+{
+    "name": "burnbright/silverstripe-inlinestylesemail",
+    "description": "Copies CSS styles to inline style tags. Makes designing emails a bit easier.",
+    "type": "silverstripe-module",
+    "require": {
+        "silverstripe/cms": "~3.1"
+    },
+    "license": "BSD-2",
+    "authors": [
+        {
+            "name": "Jeremy Shipman",
+            "email": "jeremy@burnbright.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "installer-name": "inlinestylesemail"
+    }
+}
